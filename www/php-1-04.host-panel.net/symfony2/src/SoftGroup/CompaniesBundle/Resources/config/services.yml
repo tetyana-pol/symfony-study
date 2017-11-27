@@ -1,0 +1,27 @@
+services:
+#    soft_group_companies.example:
+#        class: SoftGroup\CompaniesBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    soft_group_companies.admin.company:
+        class: SoftGroup\CompaniesBundle\Admin\CompanyAdmin
+        arguments: [~, SoftGroup\CompaniesBundle\Entity\Company, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Company }
+
+    soft_group_companies.admin.offices:
+        class: SoftGroup\CompaniesBundle\Admin\OfficesAdmin
+        arguments: [~, SoftGroup\CompaniesBundle\Entity\Offices, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Offices }
+
+    soft_group_companies.admin.persons:
+        class: SoftGroup\CompaniesBundle\Admin\PersonsAdmin
+        arguments: [~, SoftGroup\CompaniesBundle\Entity\Persons, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Persons }
+
+    soft_group_companies.admin.category:
+        class: SoftGroup\CompaniesBundle\Admin\CategoryAdmin
+        arguments: [~, SoftGroup\CompaniesBundle\Entity\Category, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Category }

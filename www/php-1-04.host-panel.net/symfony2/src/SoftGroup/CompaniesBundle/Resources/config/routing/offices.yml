@@ -1,0 +1,24 @@
+offices_index:
+    path:     /
+    defaults: { _controller: "SoftGroupCompaniesBundle:Offices:index" }
+    methods:  GET
+
+offices_show:
+    path:     /{id}/show
+    defaults: { _controller: "SoftGroupCompaniesBundle:Offices:show" }
+    methods:  GET
+
+offices_new:
+    path:     /new
+    defaults: { _controller: "SoftGroupCompaniesBundle:Offices:new" }
+    methods:  [GET, POST]
+
+offices_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SoftGroupCompaniesBundle:Offices:edit" }
+    methods:  [GET, POST]
+
+offices_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SoftGroupCompaniesBundle:Offices:delete" }
+    methods:  DELETE

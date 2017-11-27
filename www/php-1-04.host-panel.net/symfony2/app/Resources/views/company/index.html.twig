@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Companies list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Adress</th>
+                <th>Site</th>
+                <th>Description</th>
+                <th>Createdat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for company in companies %}
+            <tr>
+                <td><a href="{{ path('company_show', { 'id': company.id }) }}">{{ company.id }}</a></td>
+                <td>{{ company.name }}</td>
+                <td>{{ company.adress }}</td>
+                <td>{{ company.site }}</td>
+                <td>{{ company.description }}</td>
+                <td>{% if company.createdAt %}{{ company.createdAt|date('Y-m-d') }}{% endif %}</td>
+		<td>{% if company.updatedAt %}{{ company.updatedAt|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('company_show', { 'id': company.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('company_edit', { 'id': company.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('company_new') }}">Create a new company</a>
+        </li>
+    </ul>
+{% endblock %}

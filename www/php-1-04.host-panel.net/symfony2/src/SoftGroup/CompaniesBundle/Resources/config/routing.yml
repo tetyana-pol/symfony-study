@@ -1,0 +1,34 @@
+soft_group_companies_company:
+    resource: "@SoftGroupCompaniesBundle/Resources/config/routing/company.yml"
+    prefix:   /company
+
+soft_group_companies_offices:
+    resource: "@SoftGroupCompaniesBundle/Resources/config/routing/offices.yml"
+    prefix:   /offices
+
+soft_group_companies_persons:
+    resource: "@SoftGroupCompaniesBundle/Resources/config/routing/persons.yml"
+    prefix:   /persons
+
+soft_group_companies_category:
+    resource: "@SoftGroupCompaniesBundle/Resources/config/routing/category.yml"
+    prefix:   /category
+
+soft_group_companies_homepage:
+    path:     /
+    defaults: { _controller: SoftGroupCompaniesBundle:Default:index }
+
+
+soft_group_companies_about:
+    path: /about
+    defaults: { _controller: SoftGroupCompaniesBundle:About:index }
+
+soft_group_companies_contact:
+    path: /contact
+    defaults: { _controller: SoftGroupCompaniesBundle:Contact:index }
+
+soft_group_companies_news:
+    path: /news
+    defaults: { _controller: SoftGroupCompaniesBundle:News:index }
+
+

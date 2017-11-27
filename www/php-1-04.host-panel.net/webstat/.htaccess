@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "/www/php-1-04.host-panel.net/webstat"
+AuthUserFile /var/www/php-1-04/data/etc/91168776.passwd
+DirectoryIndex index.html
+<Limit GET POST>
+	require valid-user
+</Limit>
